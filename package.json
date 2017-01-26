@@ -5,6 +5,7 @@
     "babel-cli": "^6.22.2",
     "babel-loader": "^6.2.10",
     "babel-preset-latest": "^6.22.0",
+    "conventional-changelog-cli": "^1.2.0",
     "documentation": "^4.0.0-beta.18",
     "jsdoc": "^3.4.3",
     "rimraf": "^2.5.4",
@@ -16,9 +17,10 @@
     "build": "webpack --config ./webpack.conf.js",
     "preversion": "npm run cleanup && npm prune && npm install",
     "postversion": "git push && git push --tags && npm publish",
-    "version": "npm run build && npm run doc && git add -A",
+    "version": "npm run build && npm run doc && npm run changelog && git add -A",
     "doc": "documentation readme ./src/index.js -s 'Documentation'",
-    "jsdoc": "jsdoc -c ./jsdoc.config.json"
+    "jsdoc": "jsdoc -c ./jsdoc.config.json",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "main": "./build/index.js"
 }
