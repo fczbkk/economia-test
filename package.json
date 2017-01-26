@@ -11,8 +11,10 @@
   "license": "MIT",
   "scripts": {
     "cleanup": "rimraf build",
-    "prebuild": "npm run cleanup",
-    "build": "webpack --config ./webpack.conf.js"
+    "build": "webpack --config ./webpack.conf.js",
+    "preversion": "npm run cleanup && npm prune && npm install",
+    "postversion": "git push && git push --tags && npm publish",
+    "version": "npm run build && git add -A"
   },
   "main": "./build/index.js"
 }
