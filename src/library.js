@@ -27,3 +27,13 @@ export function subtract (a, b) {
 export function multiply (a, b) {
   return a * b;
 }
+
+/**
+ * Divides two numbers
+ * @param {number} a
+ * @param {number} b
+ * @returns {number}
+ */
+export function divide (a, b) {
+  return a / a;
+}
