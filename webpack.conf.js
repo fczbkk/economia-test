@@ -1,4 +1,4 @@
-var webpack = require('webpack');
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -15,22 +15,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
+    new UglifyJsPlugin({
       compress: {
-        warnings: false,
-        screw_ie8: true,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true,
+        dead_code: true
       },
-      output: {
-        comments: false,
-      },
+      beautify: true,
+      mangle: false
     })
   ]
 };
