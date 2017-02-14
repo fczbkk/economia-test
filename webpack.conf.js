@@ -1,10 +1,13 @@
 var UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    calculator: './src/index.js',
+    jquery: './src/jquery.js'
+  },
   output: {
     path: './build/',
-    filename: 'index.js'
+    filename: '[name].js'
   },
   module: {
     rules: [

@@ -23,5 +23,8 @@
     "jsdoc": "jsdoc -c ./jsdoc.config.json",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
-  "main": "./build/index.js"
+  "main": "./build/index.js",
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
 }
